@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Exercício 11b: Gerador de Citações</title>
+  <title>Tarefa 11b: Gerador de Citações</title>
   <style>
     body {
       display: flex;
@@ -55,9 +55,17 @@
       "Acredite que você pode e você já está no meio do caminho. – Theodore Roosevelt",
       "Não importa o quão devagar você vá, desde que você não pare. – Confúcio"
     ];
+       const button = document.getElementById('newQuoteButton'); // botão
+       const quote = document.getElementById('quote'); // constante do parágrafo
+       let currentText = 0; // estado atual é 0
 
+       button.addEventListener('click', () => {
+        quote.textContent = quotes[currentText]; // pega o que estava escrito no parágrafo e substitui pelo que está armazenado na variável quotes
+         currentText = (currentText + 1) % quotes.length //Soma 1 á posição atual. Se chegar ao fim da lista, volta para o zero, ou seja looping
+       });
+       
        // 1ª Digitação (Resolva aqui o exercício)
-
+       
 
   </script>
 </body>
